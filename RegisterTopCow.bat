@@ -1,7 +1,7 @@
 :: Read user data and initialize variables
 set SoftwareFolder=%CD%
 set ElastixFolder=elastix-5.2.0-win64\
-set /p DataFolder=Enter Data folder (Ex: > Data\): 
+set /p DataFolder=Enter Data folder (Ex: Data\): 
 set OutDirectory=%DataFolder%Results\
 
 :: Install and download data
