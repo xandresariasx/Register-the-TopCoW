@@ -26,7 +26,7 @@ move Par0035.RIRE.MI.ri.ASGDPrime.txt %SoftwareFolder%%ElastixFolder%
 :: Preparation
 set DataFolder=%DataFolder%\TopCoW2024_Data_Release\
 set ParameterFile1=%SoftwareFolder%%ElastixFolder%Par0035.RIRE.MI.ri.ASGDPrime.txt
-python EditParameterFile.py Par0035.RIRE.MI.ri.ASGDPrime.txt
+python %SoftwareFolder%Utilities\EditParameterFile.py Par0035.RIRE.MI.ri.ASGDPrime.txt
 if exist "%OutDirectory%" (
     :: Remove the folder and its contents
     rd /s /q "%OutDirectory%"
