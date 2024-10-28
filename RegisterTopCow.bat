@@ -50,5 +50,5 @@ for /L %%i in (1, 1, 165) do (
 	python %SoftwareFolder%Utilities\ReadNiiSegmentationAndBinarize.py %DataFolder%\cow_seg_labelsTr\topcow_mr_!num!.nii.gz ^
 		--output %OutDirectory%Out!num!\SegmentationMRI.nii.gz
 	python %SoftwareFolder%Utilities\ComputeDiceV2.py %OutDirectory%Out!num!\SegmentationCTtoMRI.nii.gz %OutDirectory%Out!num!\SegmentationMRI.nii.gz ^
-		!num! %OutDirectory%Dices.txt
+		%DataFolder%\roi_loc_labelsTr\topcow_mr_!num!.txt !num! %OutDirectory%Dices.txt
 )
