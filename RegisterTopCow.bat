@@ -1,4 +1,3 @@
-
 :: Read user data and initialize variables
 set SoftwareFolder=%CD%
 set ElastixFolder=elastix-5.2.0-win64\
@@ -6,6 +5,12 @@ set /p DataFolder=Enter Data folder (Ex: > Data\):
 set OutDirectory=%DataFolder%Results\
 
 :: Install and download data
+set PYTHON_VERSION=3.10.8
+set INSTALL_PATH=C:\Python310
+set INSTALLER=python-installer.exe
+curl -o %INSTALLER% https://www.python.org/ftp/python/%PYTHON_VERSION%/python-%PYTHON_VERSION%-amd64.exe
+%INSTALLER% /quiet InstallAllUsers=1 PrependPath=1 TargetDir=%INSTALL_PATH%
+del %INSTALLER%
 pip install nibabel
 set output_file=downloaded_file.zip
 curl -o %output_file% https://drive.switch.ch/index.php/s/rkqOO3adjmJVlMz/download
