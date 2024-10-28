@@ -18,7 +18,8 @@ mkdir "%DataFolder%"
 tar -xf %output_file% -C %DataFolder%
 del downloaded_file.zip
 curl -L -o elastix-5.2.0-win64.zip https://github.com/SuperElastix/elastix/releases/download/5.2.0/elastix-5.2.0-win64.zip
-tar -xf %CD% -C %SoftwareFolder%%ElastixFolder%
+mkdir %SoftwareFolder%%ElastixFolder%
+tar -xf elastix-5.2.0-win64.zip -C %SoftwareFolder%%ElastixFolder%
 del elastix-5.2.0-win64.zip
 curl -L -o Par0035.RIRE.MI.ri.ASGDPrime.txt https://raw.githubusercontent.com/SuperElastix/ElastixModelZoo/master/models/Par0035/Par0035.RIRE.MI.ri.ASGDPrime.txt
 move Par0035.RIRE.MI.ri.ASGDPrime.txt %SoftwareFolder%%ElastixFolder%
