@@ -44,10 +44,10 @@ for /L %%i in (1, 1, 165) do (
 		-out %OutDirectory%Out!num!\ -p %ParameterFile1% 
 	%SoftwareFolder%%ElastixFolder%transformix -in %DataFolder%\cow_seg_labelsTr\topcow_ct_!num!.nii.gz -out %OutDirectory%Out!num!\ ^
 		-tp %OutDirectory%Out!num!\TransformParameters.0.txt	
-	python %SoftwareFolder%Utilities\ReadNiiSegmentationAndBinarize.py %OutDirectory%Out!num!\result.nii.gz ^
+	python %SoftwareFolder%\Utilities\ReadNiiSegmentationAndBinarize.py %OutDirectory%Out!num!\result.nii.gz ^
 		--output %OutDirectory%Out!num!\SegmentationCTtoMRI.nii.gz
-	python %SoftwareFolder%Utilities\ReadNiiSegmentationAndBinarize.py %DataFolder%\cow_seg_labelsTr\topcow_mr_!num!.nii.gz ^
+	python %SoftwareFolder%\Utilities\ReadNiiSegmentationAndBinarize.py %DataFolder%\cow_seg_labelsTr\topcow_mr_!num!.nii.gz ^
 		--output %OutDirectory%Out!num!\SegmentationMRI.nii.gz
-	python %SoftwareFolder%Utilities\ComputeDiceV2.py %OutDirectory%Out!num!\SegmentationCTtoMRI.nii.gz %OutDirectory%Out!num!\SegmentationMRI.nii.gz ^
+	python %SoftwareFolder%\Utilities\ComputeDiceV2.py %OutDirectory%Out!num!\SegmentationCTtoMRI.nii.gz %OutDirectory%Out!num!\SegmentationMRI.nii.gz ^
 		!num! %OutDirectory%Dices.txt
 )
