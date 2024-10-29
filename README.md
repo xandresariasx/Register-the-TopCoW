@@ -1,6 +1,11 @@
 # Register-the-TopCoW
-DOS Batch script to register the brain CT and MRI images from the TopCoW challenge.
+DOS Batch script to register the brain CT and MRI images from the TopCoW challenge (https://topcow24.grand-challenge.org/).
 
-Execute RegisterTopCow.bat, in the command prompt you will be asked to input the data folder.
+In this challenge, images are not aligned, then if both images need to be pixel-wise comparable for further combined CT-MRI analysis, then registration is needed.
 
-The script will download the raw data and  tools such Elastix. 
+CT images are aligned to MRI images as they have better quality. Registrations are done using Elastix tool, using the parameters described in "http://37-97-228-132.colo.transip.net/modelzoo/par0035/" for CT and MRI registration.
+
+Execute RegisterTopCow.bat, then in the command prompt you will be asked to input the data folder.
+
+The script will download the raw data and several tools such as Elastix. Then each CT image from folder is register to the MRI image with the number. 
+
